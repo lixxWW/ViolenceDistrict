@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "Legit AutoParry & Visuals",
+    "Author": "VD_Team",
+    "Description": "Perfect for closet cheating. Safe parry range (7.5 studs), facing check active, delay 0.05s, compact ESP with custom color scheme.",
+    "Category": "LEGIT",
+    "Config": {
+      "AutoParry": true,
+      "ParryRange": 7.5,
+      "ParryDelay": 0.05,
+      "ParryFacingCheck": true,
+      "ParryUseItem": true,
+      "ESPStyle": "Compact",
+      "MasterESP": true,
+      "KillerESP": { "Enabled": true, "Aura": true, "Distance": true, "ShowName": true },
+      "SurvivorESP": { "Enabled": true, "Aura": true, "Distance": true, "ShowName": true },
+      "ESPColors": {
+        "Killer": { "__type": "Color3", "r": 255, "g": 60, "b": 60 },
+        "SurvivorHealthy": { "__type": "Color3", "r": 60, "g": 255, "b": 60 },
+        "SurvivorInjured": { "__type": "Color3", "r": 255, "g": 165, "b": 0 },
+        "SurvivorKnocked": { "__type": "Color3", "r": 255, "g": 0, "b": 0 }
+      }
+    }
+  },
+  {
+    "Name": "Rage Killer / Slasher",
+    "Author": "ViolentPlayer",
+    "Description": "Maximum advantage when playing as Killer. Blatant aura ESP, speed boost enabled, automatic dodge active, no stun, and full bright.",
+    "Category": "RAGE",
+    "Config": {
+      "MasterESP": true,
+      "KillerESP": { "Enabled": true, "Aura": true, "Distance": true, "ShowName": true },
+      "SurvivorESP": { "Enabled": true, "Aura": true, "Distance": true, "ShowName": true },
+      "SpeedBoostEnabled": true,
+      "SpeedBoost": 1.35,
+      "NoStun": true,
+      "FullBright": true,
+      "NoFog": true,
+      "AutoDodgeVeilSpear": true,
+      "ESPColors": {
+        "SurvivorHealthy": { "__type": "Color3", "r": 0, "g": 255, "b": 255 },
+        "SurvivorInjured": { "__type": "Color3", "r": 255, "g": 0, "b": 255 }
+      }
+    }
+  },
+  {
+    "Name": "Auto-Farm God (AFK)",
+    "Author": "GrindMaster",
+    "Description": "Optimized settings for fully AFK survivor auto-farming. 100% perfect skill checks, auto escape, automatic healing, and low graphics for performance.",
+    "Category": "FARM",
+    "Config": {
+      "AutoSkillCheck": true,
+      "SkillCheckMode": "Perfect",
+      "InstantSkillCheck": true,
+      "AutoFarmSurvivor": true,
+      "AutoFarmAFK": true,
+      "InstantHeal": true,
+      "NoStun": true,
+      "RTXGraphics": false,
+      "CinematicDOF": false
+    }
+  },
+  {
+    "Name": "Competitive Survivor (Closer)",
+    "Author": "LoopingKing",
+    "Description": "Designed for competitive matches. Auto-moonwalk on, flowstate perk ready, pallet/vault noclip on hotkey, and optimal ping compensation for parrying.",
+    "Category": "SURVIVOR",
+    "Config": {
+      "AutoMoonwalk": true,
+      "MoonwalkSwaySpeed": 15,
+      "MoonwalkSwayAmplitude": 0.5,
+      "MoonwalkDisableOnVault": true,
+      "NoclipVaultsPallets": true,
+      "AutoParry": true,
+      "ParryRange": 8.2,
+      "ParryPingCompensation": true,
+      "ParryDelay": 0,
+      "FlowstatePerk": true,
+      "FlowstateCooldown": 15
+    }
+  }
+]
