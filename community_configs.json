@@ -10974,7 +10974,7 @@
     "Name": "Best Legit Clean",
     "Author": "@y6locc",
     "Category": "SURVIVOR",
-    "Description": "E for 25% Speed Boost, H for Cancel Gen, G for Desync, ESP is clean and contains the essential. Enjoy using this config",
+    "Description": "E for 10% Speed Boost, H for Cancel Gen, G for Desync, ESP is clean and contains the essential. Enjoy using this config",
     "Config": {
       "Desync": false,
       "EnableDesyncGhost": true,
@@ -11208,7 +11208,7 @@
       "ESPDistanceFadeMap": true,
       "FOV": 111,
       "SpeedBoostEnabled": true,
-      "SpeedBoost": 1.25,
+      "SpeedBoost": 1.10,
       "FrenzyParry": false,
       "ParryFacingCheck": true,
       "InstantHeal": false,
