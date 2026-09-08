@@ -6,24 +6,33 @@ local SCRIPTS = {
     [77085202503540] = BASE .. "growagarden.lua",         -- Grow a Garden 2 (New)
     [142823291]      = BASE .. "murdermystery2.lua",     -- Murder Mystery 2
     [66654135]       = BASE .. "murdermystery2.lua",     -- Murder Mystery 2 Trade Plaza
+    [10265440494]    = BASE .. "1981.lua",               -- 1981 (Main / Lobby)
+    [72137289529544] = BASE .. "1981.lua",               -- 1981 (In-Game Match)
 }
 
 local placeId = game.PlaceId
 local url     = SCRIPTS[placeId]
 
 if not url then
-    local player = game:GetService("Players").LocalPlayer
-    local coinBags = player and player:FindFirstChild("PlayerGui")
-        and player.PlayerGui:FindFirstChild("MainGUI")
-        and player.PlayerGui.MainGUI:FindFirstChild("Game")
-        and player.PlayerGui.MainGUI.Game:FindFirstChild("CoinBags")
-    
-    if coinBags then
-        url = BASE .. "murdermystery2.lua"
-        print("[Loader] Game detected via CoinBags (Murder Mystery 2)")
+    -- Fallback 1: 1981 / Friday the 13th Object Detection
+    if workspace:FindFirstChild("Packanack Lodge") or workspace:FindFirstChild("InGameHousing") then
+        url = BASE .. "1981.lua"
+        print("[Loader] Game detected via Map/Housing (1981)")
     else
-        warn("[Loader] No script found for PlaceId: " .. tostring(placeId))
-        return
+        -- Fallback 2: Murder Mystery 2 Detection
+        local player = game:GetService("Players").LocalPlayer
+        local coinBags = player and player:FindFirstChild("PlayerGui")
+            and player.PlayerGui:FindFirstChild("MainGUI")
+            and player.PlayerGui.MainGUI:FindFirstChild("Game")
+            and player.PlayerGui.MainGUI.Game:FindFirstChild("CoinBags")
+        
+        if coinBags then
+            url = BASE .. "murdermystery2.lua"
+            print("[Loader] Game detected via CoinBags (Murder Mystery 2)")
+        else
+            warn("[Loader] No script found for PlaceId: " .. tostring(placeId))
+            return
+        end
     end
 else
     print("[Loader] Game detected: " .. tostring(placeId))
