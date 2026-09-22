@@ -14,12 +14,16 @@ local placeId = game.PlaceId
 local url     = SCRIPTS[placeId]
 
 if not url then
-    -- Fallback 1: 1981 / Friday the 13th Object Detection
-    if workspace:FindFirstChild("Packanack Lodge") or workspace:FindFirstChild("InGameHousing") then
+    -- Fallback 1: Blair Detection via FavoriteRoomHighlightMock
+    if workspace:FindFirstChild("FavoriteRoomHighlightMock") then
+        url = BASE .. "blair.lua"
+        print("[Loader] Game Detected: Blair")
+    -- Fallback 2: 1981 / Friday the 13th Object Detection
+    elseif workspace:FindFirstChild("Packanack Lodge") or workspace:FindFirstChild("InGameHousing") then
         url = BASE .. "1981.lua"
-        print("[Loader] Game detected via Map/Housing (1981)")
+        print("[Loader] Game Detected: 1981")
     else
-        -- Fallback 2: Murder Mystery 2 Detection
+        -- Fallback 3: Murder Mystery 2 Detection
         local player = game:GetService("Players").LocalPlayer
         local coinBags = player and player:FindFirstChild("PlayerGui")
             and player.PlayerGui:FindFirstChild("MainGUI")
@@ -28,14 +32,14 @@ if not url then
         
         if coinBags then
             url = BASE .. "murdermystery2.lua"
-            print("[Loader] Game detected via CoinBags (Murder Mystery 2)")
+            print("[Loader] Game Detected: Murder Mystery 2")
         else
             warn("[Loader] No script found for PlaceId: " .. tostring(placeId))
             return
         end
     end
 else
-    print("[Loader] Game detected: " .. tostring(placeId))
+    print("[Loader] Game Detected: " .. tostring(placeId))
 end
 
 print("[Loader] Downloading script from ViolenceDistrict...")
