@@ -8,6 +8,7 @@ local SCRIPTS = {
     [66654135]       = BASE .. "murdermystery2.lua",     -- Murder Mystery 2 Trade Plaza
     [10265440494]    = BASE .. "1981.lua",               -- 1981 (Main / Lobby)
     [72137289529544] = BASE .. "1981.lua",               -- 1981 (In-Game Match)
+    [6137321701] = BASE .. "blair.lua",
 }
 
 local placeId = game.PlaceId
