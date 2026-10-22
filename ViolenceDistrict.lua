@@ -10,6 +10,7 @@ local SCRIPTS = {
     [72137289529544] = BASE .. "1981.lua",               -- 1981 (In-Game Match)
     [6137321701]     = BASE .. "blair.lua",              -- Blair
     [893973440]      = BASE .. "ftf.lua",                -- Flee the Facility
+    [13772394625]    = BASE .. "bladeball.lua",          -- Blade Ball
 }
 
 local placeId = game.PlaceId
@@ -22,6 +23,9 @@ if not url then
     elseif workspace:FindFirstChild("Packanack Lodge") or workspace:FindFirstChild("InGameHousing") then
         url = BASE .. "1981.lua"
         print("[Hypnosis] Game Detected: 1981")
+    elseif workspace:FindFirstChild("Balls") and (workspace:FindFirstChild("Alive") or workspace:FindFirstChild("Dead")) then
+        url = BASE .. "bladeball.lua"
+        print("[Hypnosis] Game Detected: Blade Ball")
     else
         local player = game:GetService("Players").LocalPlayer
         local coinBags = player and player:FindFirstChild("PlayerGui")
